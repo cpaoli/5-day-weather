@@ -1,6 +1,7 @@
 import {combineReducers} from 'redux';
-import weatherList from './weatherList'
+import {weatherList, isLoading} from './weatherList'
 
 export default combineReducers({
-    weatherList
+    weatherList,
+    isLoading
 });

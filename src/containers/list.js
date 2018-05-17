@@ -27,7 +27,7 @@ class List extends Component {
         ));
         
         return (
-            <table className="table">
+            <table className="table" >
                 <thead>                
                     <tr>{fields}</tr>
                 </thead>
@@ -35,6 +35,7 @@ class List extends Component {
                     {this.props.weatherList.map(this.renderWeather)}
                </tbody>
             </table>
+            
             )
     }
 }
