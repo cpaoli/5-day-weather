@@ -1,27 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {addCity, loader} from '../actions';
-import ActivityIndicator from 'react-activity-indicator';
 
-const SearchCity = ({onClick, isLoading}) => {
+const SearchCity = ({onClick, isLoading, errorMessage}) => {
     return(
         <div style={{ overflow:'hidden'}}>            
-            <div style={{margin: "1em auto", float:'left'}}><form>
-                <input placeholder="Enter a City" type="text" ref={(element) => { this.input = element }}/>
-                <button type="submit" onClick = {e => {
+            <div style={{margin: "1em auto", float:'left'}}>
+            <form style={{marginLeft: "1em"}}>
+                <input className="enter-city" placeholder="Enter a City" type="text"
+                ref={(element) => { this.input = element }}
+                style={{boxShadow: (errorMessage)? "0 0 5px red": null}}/>
+                <button className="btn" type="submit" onClick = {e => {
                     e.preventDefault();
                     (this.input.value.trim()!=="") ? onClick() : this.input.value = ""}}>Go!</button>
-            </form></div>
-            {(isLoading)? <div style={{float:'left', margin:'1em'}}><ActivityIndicator 
-            number={3} duration={300} activeColor="#0070bf" borderWidth={2} borderRadius="50%" diameter={15} 
-          /></div> : null}
+                             
+                {(errorMessage)?<div style={{fontSize:"12px", color:"red", marginTop: "4px"}}>La città inserita non esiste negli USA</div>: null }
+            </form>
+            </div>
+            {(isLoading)? <div className="loader"></div>: null} 
         </div>
     )
 }
 
 function mapStateToProps (state) {
     return {
-        isLoading: state.isLoading
+        isLoading: state.isLoading,
+        errorMessage: state.errorMessage
     }
 }
 

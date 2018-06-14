@@ -1,0 +1,58 @@
+.loader {
+    border-bottom: 2px solid rgb(135, 197, 252);
+    border-left: 2px solid rgb(80, 170, 250);
+    border-top: 3px solid #07d;
+    border-right: 2px solid transparent;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: 1em;
+    animation: spinner .6s linear infinite;
+    margin-top: 1.5em;
+}
+
+.btn {
+    color: #07d;
+    border: 1px solid #07d;
+    outline:none;
+    text-shadow:-1px 1px 0 rgba(0,0,0,0.2);
+    font-weight:700;
+    transition:all .1s linear;
+    background: #fff
+}
+
+.btn:focus {
+    outline:none;
+}
+
+.btn:active {
+    outline:0 !important;
+    transform: scale(.97);
+    box-shadow: 0 3px 5px -1px;
+}
+
+.enter-city:focus {
+    outline: none;
+    box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2)
+}
+
+.enter-city {
+    display: inline-block;
+    position: relative;
+    font-size: 21px;
+    margin-right: 4px;
+    border-radius: 5px;
+    padding: 2px 8px;
+    top: 3px;
+    border: 1px solid gray;
+}
+
+::placeholder {
+    opacity: 0.8;
+}
+
+@keyframes spinner{
+to {transform: rotate(360deg);}
+
+}
