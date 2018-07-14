@@ -14,7 +14,7 @@ const SearchCity = ({onClick, isLoading, errorMessage}) => {
                     e.preventDefault();
                     (this.input.value.trim()!=="") ? onClick() : this.input.value = ""}}>Go!</button>
                              
-                {(errorMessage)?<div style={{fontSize:"12px", color:"red", marginTop: "4px"}}>La città inserita non esiste negli USA</div>: null }
+                {(errorMessage)?<div style={{fontSize:"12px", color:"red", marginTop: "4px"}}>The city you have entered is not in the USA</div>: null }
             </form>
             </div>
             {(isLoading)? <div className="loader"></div>: null} 
